@@ -1,0 +1,15 @@
+.Navbar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  width: 150px;
+}
+
+.nav_list{
+  display: flex;
+  gap: 20px;
+}

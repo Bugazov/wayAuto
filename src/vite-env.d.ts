@@ -1,1 +1,1 @@
-/// <reference types="vite/client" />
+/// <reference types="./app/types/global.d.ts" />
