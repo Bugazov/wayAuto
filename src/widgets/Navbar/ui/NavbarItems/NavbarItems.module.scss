@@ -1,0 +1,26 @@
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: black;
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  width: 20px;
+  fill: #04ff04;
+}
+.icon path {
+  fill: var(--primary-color);
+}
+
+.phone{
+  font-weight: 700;
+  color: black;
+}
+
+

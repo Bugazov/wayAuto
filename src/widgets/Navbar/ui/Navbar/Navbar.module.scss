@@ -3,13 +3,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 40px 0 ;
 }
 
 .logo{
-  width: 150px;
+  width: 200px;
+  height: auto;
 }
 
 .nav_list{
   display: flex;
   gap: 20px;
 }
+
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  width: 40px;
+}
+
+
+
