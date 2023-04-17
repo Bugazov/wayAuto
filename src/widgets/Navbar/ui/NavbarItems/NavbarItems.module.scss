@@ -2,12 +2,18 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.item:hover{
+  opacity: 0.8;
 }
 
 .link {
   color: black;
   margin-left: 10px;
   opacity: 1;
+
 }
 
 .icon {
