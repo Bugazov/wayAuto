@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0 ;
+  padding: 35px 0 ;
 }
 
 .logo{
@@ -32,4 +32,6 @@
 }
 
 
-
+.bg_navbar {
+  border-bottom:1px solid rgba(0,0,0,0.2) ;
+}

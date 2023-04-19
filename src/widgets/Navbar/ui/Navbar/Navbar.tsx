@@ -11,13 +11,15 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     return (
 
-        <div className='container'>
-            <div className={classNames(cls.Navbar, {}, [className])}>
-                <div className={cls.logo}>
-                    <img className={cls.logo} src={logo} alt="logo"/>
-                </div>
-                <div className={cls.nav_list}>
-                    <NavbarItems/>
+        <div className={cls.bg_navbar}>
+            <div className='container'>
+                <div className={classNames(cls.Navbar, {}, [className])}>
+                    <div className={cls.logo}>
+                        <img className={cls.logo} src={logo} alt="logo"/>
+                    </div>
+                    <div className={cls.nav_list}>
+                        <NavbarItems/>
+                    </div>
                 </div>
             </div>
         </div>

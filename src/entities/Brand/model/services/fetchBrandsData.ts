@@ -2,9 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { Brand } from 'entities/Brand/model/types/brands';
 
-export const fetchBrandsData = createAsyncThunk<Brand[], string, ThunkConfig<string>>(
+export const fetchBrandsData = createAsyncThunk<Brand[], void, ThunkConfig<string>>(
     'brands/fetchBrandsData',
-    async (profileId, thunkAPI) => {
+    async (_, thunkAPI) => {
         const { extra, rejectWithValue } = thunkAPI;
         try {
             const response = await extra.api.get<Brand[]>('/brands');
