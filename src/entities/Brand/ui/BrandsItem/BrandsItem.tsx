@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './BrandsItem.module.scss';
 import { Brand } from '../../model/types/brands';
+import { VStack } from 'shared/ui/Stack';
 
 interface BrandsItemProps {
     className?: string;
@@ -9,7 +10,7 @@ interface BrandsItemProps {
 
 export const BrandsItem = ({ className, item }: BrandsItemProps) => {
     return (
-        <div className={classNames(cls.BrandsItem, {}, [className])}>
+        <VStack align={'center'} justify={'between'} className={classNames(cls.BrandsItem, {}, [className])}>
             <div className={cls.logo}>
                 <img src={`${__API__}/images/${item.logo}`} alt=""/>
             </div>
@@ -17,6 +18,6 @@ export const BrandsItem = ({ className, item }: BrandsItemProps) => {
                 {item.name}
             </div>
 
-        </div>
+        </VStack>
     );
 };
