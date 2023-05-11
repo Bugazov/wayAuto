@@ -1,0 +1,48 @@
+.ListBox {
+    position: relative;
+}
+
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trigger_btn{
+    border-radius: 20px ;
+    padding: 10px 25px;
+}
+
+.activeSelect{
+    border-radius: 20px 20px 0 0  ;
+}
+
+.options {
+    background: var(--listbox-bg);
+    border: 0.5px solid var(--primary-color);
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    color: black;
+    list-style: none;
+}
+
+.item {
+    padding: 10px 20px;
+}
+
+.active {
+    background: var(--primary-color);
+    color:white
+}
+
+.disabled {
+    opacity: 0.7;
+}
+
+.optionsTop {
+    bottom: 100%;
+}
