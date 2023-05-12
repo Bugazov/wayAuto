@@ -33,7 +33,7 @@ type HeaderTagType = 'h1' | 'h2' |'h3'
 const mapSizeToHeaderTag:Record<string, HeaderTagType> = {
     [TextSize.L]: 'h1',
     [TextSize.M]: 'h2',
-    [TextSize.S]: 'h3',
+    [TextSize.S]: 'h3'
 };
 
 export const Text = memo((props: TextProps) => {
@@ -43,13 +43,13 @@ export const Text = memo((props: TextProps) => {
         text,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
-        size = TextSize.M,
+        size = TextSize.M
     } = props;
 
     const mods = {
         [cls[theme]]: true,
         [cls[align]]: true,
-        [cls[size]]: true,
+        [cls[size]]: true
     };
     const HeaderTag = mapSizeToHeaderTag[size];
 

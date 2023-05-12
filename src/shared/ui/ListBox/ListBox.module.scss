@@ -1,5 +1,6 @@
 .ListBox {
     position: relative;
+
 }
 
 .trigger {
@@ -13,9 +14,11 @@
 .trigger_btn{
     border-radius: 20px ;
     padding: 10px 25px;
+    min-width: 200px;
 }
 
 .activeSelect{
+    border-bottom:none;
     border-radius: 20px 20px 0 0  ;
 }
 
@@ -28,6 +31,7 @@
     width: 100%;
     color: black;
     list-style: none;
+    cursor: pointer;
 }
 
 .item {

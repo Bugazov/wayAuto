@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, useState } from 'react';
+import { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { HStack } from '../Stack';
@@ -31,6 +31,7 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
 
 export function ListBox (props: ListBoxProps) {
     const [activeSelect, setActiveSelect] = useState(false);
+    const activeRef = useRef();
     const {
         className,
         items,
@@ -43,6 +44,13 @@ export function ListBox (props: ListBoxProps) {
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
+    useEffect(() => {
+        const handleClick = (e:MouseEvent) => {
+            setActiveSelect(false);
+        };
+        document.addEventListener('mouseup', handleClick);
+        return () => document.removeEventListener('mouseup', handleClick);
+    }, []);
 
     return (
         <HStack gap="4">
@@ -56,6 +64,7 @@ export function ListBox (props: ListBoxProps) {
             >
                 <HListBox.Button className={cls.trigger}>
                     <Button
+
                         onClick={() => setActiveSelect(!activeSelect)}
                         className={classNames(cls.trigger_btn, { [cls.activeSelect]: activeSelect })}
                         disabled={readonly}
@@ -73,6 +82,7 @@ export function ListBox (props: ListBoxProps) {
                         >
                             {({ active, selected }) => (
                                 <li
+                                    onClick={() => setActiveSelect(false)}
                                     className={classNames(
                                         cls.item,
                                         {

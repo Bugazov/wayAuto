@@ -2,9 +2,11 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { NavigateOptions, To } from 'react-router-dom';
 import { AxiosInstance } from 'axios';
 import { BrandsSchema } from 'entities/Brand';
+import { AutoSearchSchema } from 'features/AutoSearch/model/types/autoSearchSchema';
 
 export interface StateSchema {
     brands?:BrandsSchema
+    autoSearch?:AutoSearchSchema
 
 }
 
