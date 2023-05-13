@@ -41,7 +41,7 @@ export const Brands = ({ className }: BrandsProps) => {
                 <div className={classNames(cls.Brands, {}, [className])}>
                     <div className={cls.brandsItems}>
                         {brands.map((item) => (
-                            <BrandsItem item={item}/>
+                            <BrandsItem key={item._id} item={item}/>
                         ))}
                     </div>
                 </div>

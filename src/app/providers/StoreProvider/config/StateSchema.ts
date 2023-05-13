@@ -5,7 +5,7 @@ import { BrandsSchema } from 'entities/Brand';
 import { AutoSearchSchema } from 'features/AutoSearch/model/types/autoSearchSchema';
 
 export interface StateSchema {
-    brands?:BrandsSchema
+    brands:BrandsSchema
     autoSearch?:AutoSearchSchema
 
 }
@@ -24,7 +24,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema>{
 
 export interface ThunkExtraArg{
     api:AxiosInstance,
-    navigate?:(to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T>{

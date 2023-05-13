@@ -1,22 +1,21 @@
 import { StateSchema, ThunkExtraArg } from 'app/providers/StoreProvider/config/StateSchema';
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { createReducerManager } from './reducerManager';
+import { brandsReducer } from 'entities/Brand/model/slices/BrandsSlice';
 export function createReduxStore (
     initialState?: StateSchema,
-    asyncReducers?:ReducersMapObject<StateSchema>,
-    navigate?:(to: To, options?: NavigateOptions) => void
+    asyncReducers?:ReducersMapObject<StateSchema>
 ) {
     const rootReducers = {
-        ...asyncReducers
+        ...asyncReducers,
+        brands: brandsReducer
 
     };
 
     const reducerManager = createReducerManager(rootReducers);
     const extraArgs: ThunkExtraArg = {
-        api: $api,
-        navigate
+        api: $api
     };
 
     const store = configureStore({

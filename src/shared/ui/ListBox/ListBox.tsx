@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
+import { Fragment, memo, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { HStack } from '../Stack';
@@ -29,9 +29,7 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
     top: cls.optionsTop
 };
 
-export function ListBox (props: ListBoxProps) {
-    const [activeSelect, setActiveSelect] = useState(false);
-    const activeRef = useRef();
+export const ListBox = memo((props: ListBoxProps) => {
     const {
         className,
         items,
@@ -44,13 +42,13 @@ export function ListBox (props: ListBoxProps) {
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
-    useEffect(() => {
-        const handleClick = (e:MouseEvent) => {
-            setActiveSelect(false);
-        };
-        document.addEventListener('mouseup', handleClick);
-        return () => document.removeEventListener('mouseup', handleClick);
-    }, []);
+    // useEffect(() => {
+    //     const handleClick = (e:MouseEvent) => {
+    //         setActiveSelect(false);
+    //     };
+    //     document.addEventListener('mouseup', handleClick);
+    //     return () => document.removeEventListener('mouseup', handleClick);
+    // }, []);
 
     return (
         <HStack gap="4">
@@ -62,27 +60,23 @@ export function ListBox (props: ListBoxProps) {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button className={cls.trigger}>
+                <HListBox.Button as={'div'} className={cls.trigger}>
                     <Button
-
-                        onClick={() => setActiveSelect(!activeSelect)}
-                        className={classNames(cls.trigger_btn, { [cls.activeSelect]: activeSelect })}
-                        disabled={readonly}
+                        className={classNames(cls.trigger_btn, { })}
                     >
-                        {value ?? defaultValue}
+                        {value || defaultValue}
                     </Button>
                 </HListBox.Button>
                 <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
                     {items?.map((item) => (
                         <HListBox.Option
                             key={item.value}
-                            value={item.value}
+                            value={item.content}
                             disabled={item.disabled}
                             as={Fragment}
                         >
                             {({ active, selected }) => (
                                 <li
-                                    onClick={() => setActiveSelect(false)}
                                     className={classNames(
                                         cls.item,
                                         {
@@ -101,4 +95,4 @@ export function ListBox (props: ListBoxProps) {
             </HListBox>
         </HStack>
     );
-}
+});
