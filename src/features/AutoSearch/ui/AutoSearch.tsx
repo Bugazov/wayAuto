@@ -38,6 +38,7 @@ export const AutoSearch = memo((props: AutoSearchProps) => {
 
     const onChangeBrandAuto = useCallback((value:string) => {
         dispatch(autoSearchActions.setBrand(value));
+        dispatch(autoSearchActions.setSelectedCar(''));
     }, [dispatch]);
     const onChangeModelAuto = useCallback((value:string) => {
         dispatch(autoSearchActions.setSelectedCar(value));
