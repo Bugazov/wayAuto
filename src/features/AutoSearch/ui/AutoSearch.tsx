@@ -8,8 +8,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
     getAutoSearchBrand,
-    getAutoSearchBrandCars, getAutoSearchBrandSelectedCars
-
+    getAutoSearchBrandCars,
+    getAutoSearchBrandSelectedCars
 } from '../model/selectors/autoSearch';
 import { autoSearchActions, autoSearchReducer } from '../model/slices/autoSearchSlice';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
@@ -18,6 +18,7 @@ import { HStack } from 'shared/ui/Stack';
 
 import { fetchModelAuto } from '../model/services/fetchModelAuto/fetchModelAuto';
 import { getBrands } from 'entities/Brand/model/slices/BrandsSlice';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface AutoSearchProps {
     className?: string;
@@ -82,23 +83,26 @@ export const AutoSearch = memo((props: AutoSearchProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <div className={'container'}>
                 <Card className={classNames(cls.AutoSearch, {}, [className])}>
-
                     <Text
+                        className={cls.title}
                         align={TextAlign.CENTER}
                         title={'Подбор автомобиля по параметрам'}
                         theme={TextTheme.INVERTED}
                     />
-                    <HStack gap={'16'}>
-                        <ListBox
-                            defaultValue={'Марка автомобиля'}
-                            value={brand}
-                            onChange={onChangeBrandAuto}
-                            items={BrandsItems}/>
-                        <ListBox
-                            defaultValue={'Модель автомобиля'}
-                            value={selectedCar}
-                            onChange={onChangeModelAuto}
-                            items={CarsItems}/>
+                    <HStack justify={'between'} className={cls.btn_wrapper}>
+                        <HStack gap={'16'} >
+                            <ListBox
+                                defaultValue={'Марка автомобиля'}
+                                value={brand}
+                                onChange={onChangeBrandAuto}
+                                items={BrandsItems}/>
+                            <ListBox
+                                defaultValue={'Модель автомобиля'}
+                                value={selectedCar}
+                                onChange={onChangeModelAuto}
+                                items={CarsItems}/>
+                        </HStack>
+                        <Button theme={ButtonTheme.BACKGROUND}>Показать автомобили</Button>
                     </HStack>
                 </Card>
             </div>
