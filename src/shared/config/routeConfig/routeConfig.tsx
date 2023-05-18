@@ -1,22 +1,19 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
-import { CreateAd } from 'pages/CreateAd';
-import FavoritesPage from 'pages/FavoritesPage/ui/FavoritesPage';
+import { NewCars } from 'pages/NewCars';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?:boolean
 }
 export enum AppRoutes {
     MAIN = 'main',
-    FAVORITES = 'favorites',
-    CREATEAD = 'createAd'
+    NEWCARS = 'newcars'
 
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
-    [AppRoutes.FAVORITES]: '/favorites',
-    [AppRoutes.CREATEAD]: '/create-ad'
+    [AppRoutes.NEWCARS]: '/new-cars'
 
 };
 
@@ -25,12 +22,9 @@ export const routeConfig:Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.main,
         element: <MainPage />
     },
-    [AppRoutes.CREATEAD]: {
-        path: RoutePath.createAd,
-        element: <CreateAd/>
-    },
-    [AppRoutes.FAVORITES]: {
-        path: RoutePath.favorites,
-        element: <FavoritesPage/>
+    [AppRoutes.NEWCARS]: {
+        path: RoutePath.newcars,
+        element: <NewCars/>
     }
+
 };
