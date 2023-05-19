@@ -5,13 +5,15 @@ import cls from './Text.module.scss';
 export enum TextTheme {
   PRIMARY ='primary',
   INVERTED = 'inverted',
-  ERROR = 'error'
+  ERROR = 'error',
+    GRAY = 'gray'
 }
 
 export enum TextSize {
     M = 'size_m',
     L = 'size_l',
-    S = 'size_s'
+    S = 'size_s',
+    XS = 'size_xs'
 }
 
 export enum TextAlign{
@@ -28,12 +30,13 @@ interface TextProps {
   align?:TextAlign;
   size?:TextSize;
 }
-type HeaderTagType = 'h1' | 'h2' |'h3'
+type HeaderTagType = 'h1' | 'h2' |'h3' | 'h4'
 
 const mapSizeToHeaderTag:Record<string, HeaderTagType> = {
     [TextSize.L]: 'h1',
     [TextSize.M]: 'h2',
-    [TextSize.S]: 'h3'
+    [TextSize.S]: 'h3',
+    [TextSize.XS]: 'h4'
 };
 
 export const Text = memo((props: TextProps) => {

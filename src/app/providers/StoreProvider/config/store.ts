@@ -3,13 +3,15 @@ import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@redu
 import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { brandsReducer } from 'entities/Brand/model/slices/BrandsSlice';
+import { rtkApi } from 'shared/api/rtkApi';
 export function createReduxStore (
     initialState?: StateSchema,
     asyncReducers?:ReducersMapObject<StateSchema>
 ) {
     const rootReducers = {
         ...asyncReducers,
-        brands: brandsReducer
+        brands: brandsReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer
 
     };
 
@@ -24,7 +26,7 @@ export function createReduxStore (
             thunk: {
                 extraArgument: extraArgs
             }
-        })
+        }).concat(rtkApi.middleware)
     });
     // @ts-ignore
     store.reducerManager = reducerManager;

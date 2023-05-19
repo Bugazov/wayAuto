@@ -4,6 +4,7 @@ import logo from 'shared/assets/icons/logo3.png';
 
 import { NavbarItems } from 'widgets/Navbar/ui/NavbarItems/NavbarItems';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'shared/ui/Container/Container';
 
 interface NavbarProps {
   className?: string
@@ -19,7 +20,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     return (
 
         <div className={cls.bg_navbar}>
-            <div className='container'>
+            <Container className='container'>
                 <div className={classNames(cls.Navbar, {}, [className])}>
                     <div onClick={onChangeLink} className={cls.logo}>
                         <img className={cls.logo} src={logo} alt="logo"/>
@@ -28,7 +29,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                         <NavbarItems/>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 };

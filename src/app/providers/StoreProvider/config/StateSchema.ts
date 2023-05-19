@@ -3,10 +3,12 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { AxiosInstance } from 'axios';
 import { BrandsSchema } from 'entities/Brand';
 import { AutoSearchSchema } from 'features/AutoSearch/model/types/autoSearchSchema';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     brands:BrandsSchema
     autoSearch?:AutoSearchSchema
+    [rtkApi.reducerPath]:ReturnType<typeof rtkApi.reducer>
 
 }
 

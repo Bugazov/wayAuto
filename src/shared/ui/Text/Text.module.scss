@@ -1,4 +1,9 @@
 
+
+.title{
+    font-weight: 700!important;
+}
+
 .error {
     .title {
         color: var(--red-ligth);
@@ -16,7 +21,17 @@
     }
 
     .text {
-        color: var(--inverted-secondary-color);
+        color: var(--inverted-primary-color);
+    }
+}
+
+.gray {
+    .title {
+        color: var(--gray);
+    }
+
+    .text {
+        color: var(--gray);
     }
 }
 
@@ -52,6 +67,17 @@
 
 }
 
+.size_xs{
+    .title{
+        font: var( --font-s);
+
+    }
+    .text{
+        font: var(--font-xs);
+    }
+
+}
+
 
 .left {
     text-align: left;
@@ -64,3 +90,5 @@
 .center {
     text-align: center;
 }
+
+
