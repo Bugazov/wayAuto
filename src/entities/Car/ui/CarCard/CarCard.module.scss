@@ -1,0 +1,29 @@
+.CarCard{
+  width: 300px;
+}
+.photo{
+  width: 100%;
+  height: 180px;
+
+  img{
+    width: 100%;
+  }
+}
+
+
+.iconWatch{
+  width: 20px;
+  height: 20px;
+  margin-left: -5px;
+  path {
+    padding: 0;
+    stroke: var(--gray);
+    fill: transparent;
+  }
+}
+
+.btn{
+  width: 100%;
+}
+
+
