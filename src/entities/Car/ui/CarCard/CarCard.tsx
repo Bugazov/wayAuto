@@ -15,7 +15,10 @@ interface CarCardProps {
 }
 
 export const CarCard = (props:CarCardProps) => {
-    const { className, item } = props;
+    const {
+        className,
+        item
+    } = props;
     return (
         <Card className={classNames(cls.CarCard, {}, [className])}>
             <VStack gap={'8'}>
@@ -29,7 +32,7 @@ export const CarCard = (props:CarCardProps) => {
                     <Text theme={TextTheme.GRAY} size={TextSize.XS} text={'Кузов:'}/>
                     <Text theme={TextTheme.PRIMARY} size={TextSize.XS} text={item.body}/>
                 </HStack>
-                <HStack align={'end'} gap={'4'} >
+                <HStack align={'end'} gap={'4'}>
                     <Text theme={TextTheme.GRAY} size={TextSize.XS} text={'От'}/>
                     <HStack align={'end'} gap={'4'}>
                         <Text theme={TextTheme.INVERTED} size={TextSize.M} title={item.price}/>
@@ -41,5 +44,5 @@ export const CarCard = (props:CarCardProps) => {
                 </Button>
             </VStack>
         </Card>
-    );
-};
+    )
+}
