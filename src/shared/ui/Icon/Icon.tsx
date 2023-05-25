@@ -6,7 +6,7 @@ interface IconProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
     inverted?: boolean;
-    onClick:()=> void
+    onClick?:()=> void
 }
 
 export const Icon = memo((props: IconProps) => {
