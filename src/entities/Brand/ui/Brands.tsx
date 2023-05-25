@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Brands.module.scss';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { brandsReducer, getBrands } from '../model/slices/BrandsSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useEffect } from 'react';
 import { fetchBrandsData } from '../model/services/fetchBrandsData';
 import { useSelector } from 'react-redux';
 import { BrandsItem } from '../ui/BrandsItem/BrandsItem';
 import { getBrandsIsloading } from '../model/selectors/brands';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { HStack } from 'shared/ui/Stack';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { HStack } from '@/shared/ui/Stack';
 
 interface BrandsProps {
     className?: string;

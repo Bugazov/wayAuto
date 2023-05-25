@@ -1,5 +1,5 @@
 .Navbar {
-  height: 50px;
+  height: var(--navbar-height);
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AutoSearch.module.scss';
 
 import { memo, useCallback, useEffect, useMemo } from 'react';
-import { Card } from 'shared/ui/Card/Card';
-import { ListBox, ListBoxItem } from 'shared/ui/ListBox/ListBox';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Card } from '@/shared/ui/Card/Card';
+import { ListBox, ListBoxItem } from '@/shared/ui/Popups';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
     getAutoSearchBrand,
@@ -12,13 +12,13 @@ import {
     getAutoSearchBrandSelectedCars
 } from '../model/selectors/autoSearch';
 import { autoSearchActions, autoSearchReducer } from '../model/slices/autoSearchSlice';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { HStack } from 'shared/ui/Stack';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import Text, { TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { HStack } from '@/shared/ui/Stack';
 
 import { fetchModelAuto } from '../model/services/fetchModelAuto/fetchModelAuto';
-import { getBrands } from 'entities/Brand/model/slices/BrandsSlice';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { getBrands } from '@/entities/Brand/model/slices/BrandsSlice';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 
 interface AutoSearchProps {
     className?: string;
@@ -73,11 +73,10 @@ export const AutoSearch = memo((props: AutoSearchProps) => {
         if (brand) {
             const brandID = BrandsItems.find((item) => item.content === brand);
             if (brandID) {
-                console.log(brandID);
                 dispatch(fetchModelAuto(brandID.value));
             }
         }
-    }, [brand, BrandsItems]);
+    }, [brand, BrandsItems, dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers}>

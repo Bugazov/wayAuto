@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CarCard.module.scss';
 import { Car } from '../../model/types/car';
-import Text, { TextSize, TextTheme } from 'shared/ui/Text/Text';
-import { HStack, VStack } from 'shared/ui/Stack';
-import { Card } from 'shared/ui/Card/Card';
-import watchIcon from 'shared/assets/icons/watch.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
+import Text, { TextSize, TextTheme } from '@/shared/ui/Text/Text';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Card } from '@/shared/ui/Card/Card';
+import watchIcon from '@/shared/assets/icons/watch.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import { useCallback, useMemo } from 'react';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/Button';
 
 interface CarCardProps {
     className?: string;
@@ -44,5 +44,5 @@ export const CarCard = (props:CarCardProps) => {
                 </Button>
             </VStack>
         </Card>
-    )
-}
+    );
+};

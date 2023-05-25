@@ -1,8 +1,8 @@
-import { Navbar } from 'widgets/Navbar';
+import { Navbar } from '@/widgets/Navbar';
 
 import { Suspense } from 'react';
-import { AppRouter } from 'app/providers/router';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { AppRouter } from '@/app/providers/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 function App () {
     return (

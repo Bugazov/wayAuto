@@ -1,13 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NewCars.module.scss';
 import { memo } from 'react';
-import { NewCarsList } from 'features/NewCarsList';
-import { Page } from 'widgets/Page/Page';
-import { HStack } from 'shared/ui/Stack';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { Container } from 'shared/ui/Container/Container';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
-
+import { NewCarsList } from '@/features/NewCarsList';
+import { Page } from '@/widgets/Page/Page';
+import { HStack } from '@/shared/ui/Stack';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { Container } from '@/shared/ui/Container/Container';
+import Text, { TextTheme } from '@/shared/ui/Text/Text';
 
 interface NewCarsProps {
     className?: string;

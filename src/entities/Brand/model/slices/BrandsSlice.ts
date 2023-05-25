@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolki
 
 import { fetchBrandsData } from '../services/fetchBrandsData';
 import { Brand, BrandsSchema } from '../types/brands';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
 
 const initialState: BrandsSchema = {
     data: undefined,

@@ -1,5 +1,5 @@
 import React, { memo, Suspense, useCallback } from 'react';
-import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
+import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { Route, Routes } from 'react-router-dom';
 
 const AppRouter = () => {

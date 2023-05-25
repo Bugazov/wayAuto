@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { Brand } from 'entities/Brand/model/types/brands';
+import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { Brand } from '@/entities/Brand/model/types/brands';
 import { Cars } from '../../types/autoSearchSchema';
 
 export const fetchModelAuto = createAsyncThunk<Cars[], string, ThunkConfig<string>>(

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { Brand } from 'entities/Brand/model/types/brands';
+import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { Brand } from '@/entities/Brand/model/types/brands';
 
 export const fetchBrandsData = createAsyncThunk<Brand[], void, ThunkConfig<string>>(
     'brands/fetchBrandsData',

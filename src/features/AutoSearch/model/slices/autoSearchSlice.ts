@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AutoSearchSchema, Cars } from 'features/AutoSearch/model/types/autoSearchSchema';
+import { AutoSearchSchema, Cars } from '@/features/AutoSearch/model/types/autoSearchSchema';
 import { fetchModelAuto } from '../../model/services/fetchModelAuto/fetchModelAuto';
 
 const initialState: AutoSearchSchema = {

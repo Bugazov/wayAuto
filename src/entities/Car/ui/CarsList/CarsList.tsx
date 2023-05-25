@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CarsList.module.scss';
 
 import { memo } from 'react';
 import { Car } from '../../model/types/car';
-import { CarCard } from 'entities/Car/ui/CarCard/CarCard';
-import { HStack } from 'shared/ui/Stack';
+import { CarCard } from '@/entities/Car/ui/CarCard/CarCard';
+import { HStack } from '@/shared/ui/Stack';
 
 interface CarsListProps {
     className?: string;

@@ -1,6 +1,6 @@
-import { NavBarItemType } from 'widgets/Navbar/model/types/navbar';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import SellCarsIcon from 'shared/assets/icons/sellCarsIcon.svg';
+import { NavBarItemType } from '@/widgets/Navbar/model/types/navbar';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import SellCarsIcon from '@/shared/assets/icons/sellCarsIcon.svg';
 export const navBarItemsList:NavBarItemType[] = [
     {
         Icon: SellCarsIcon,

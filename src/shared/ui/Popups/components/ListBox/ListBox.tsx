@@ -1,8 +1,8 @@
 import { Fragment, memo, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { HStack } from '../Stack';
-import { Button } from '../Button/Button';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { HStack } from '../../../Stack';
+import { Button } from '../../../Button/Button';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {

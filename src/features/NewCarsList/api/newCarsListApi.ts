@@ -1,5 +1,5 @@
-import { rtkApi } from 'shared/api/rtkApi';
-import { Car } from 'entities/Car';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { Car } from '@/entities/Car';
 
 const newCarsListApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({

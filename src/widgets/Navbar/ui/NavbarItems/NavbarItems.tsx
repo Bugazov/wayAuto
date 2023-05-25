@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NavbarItems.module.scss';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import FavoriteIcon from 'shared/assets/icons/favorite.svg';
-import LkIcon from 'shared/assets/icons/lk.svg';
-import LetterIcon from 'shared/assets/icons/letter.svg';
-import PhoneIcon from 'shared/assets/icons/phone.svg';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import FavoriteIcon from '@/shared/assets/icons/favorite.svg';
+import LkIcon from '@/shared/assets/icons/lk.svg';
+import LetterIcon from '@/shared/assets/icons/letter.svg';
+import PhoneIcon from '@/shared/assets/icons/phone.svg';
 
 interface NavbarItemProps {
     className?: string;

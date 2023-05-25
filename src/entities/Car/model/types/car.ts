@@ -1,4 +1,4 @@
-import { Brand } from 'entities/Brand/model/types/brands';
+import { Brand } from '@/entities/Brand/model/types/brands';
 
 export interface Car {
     _id:string;
